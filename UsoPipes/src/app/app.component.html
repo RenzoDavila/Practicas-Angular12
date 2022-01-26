@@ -1,0 +1,218 @@
+<div class="container my-3">
+  <h2>Uso de Pipes en Angular</h2>
+  <hr />
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe code</th>
+        <th scope="col">Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ name }}</td>
+        <td>uppercase</td>
+        <td>{{ name | uppercase }}</td>
+      </tr>
+      <tr>
+        <td>{{ name }}</td>
+        <td>lowercase</td>
+        <td>{{ name | lowercase }}</td>
+      </tr>
+      <tr>
+        <td>{{ name }}</td>
+        <td>slice:0:4</td>
+        <td>{{ name | slice: 0:4 }}</td>
+      </tr>
+      <tr>
+        <td>{{ myArray }}</td>
+        <td>slice:0:4</td>
+        <td>{{ myArray | slice: 0:4 }}</td>
+      </tr>
+      <tr>
+        <td>{{ myArray }}</td>
+        <td>*ngFor="let number of myArray | slice:0:3"</td>
+        <td>
+          <ul>
+            <li *ngFor="let number of myArray | slice: 0:3">{{ number }}</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ nombres }}</td>
+        <td>slice:2:6</td>
+        <td>{{ nombres | slice: 2:6 }}</td>
+      </tr>
+      <tr>
+        <td>{{ nombres }}</td>
+        <td>*ngFor="let nombre of nombres | slice:2:6"</td>
+        <td>
+          <ul>
+            <li *ngFor="let nombre of nombres | slice: 2:6">{{ nombre }}</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ PI }}</td>
+        <td>number</td>
+        <td>{{ PI | number }}</td>
+      </tr>
+      <tr>
+        <td>{{ PI }}</td>
+        <td>number</td>
+        <td>{{ PI | number: "1.0-2" }}</td>
+      </tr>
+      <tr>
+        <td>{{ varNum }}</td>
+        <td>number</td>
+        <td>{{ varNum | number: ".0-0" }}</td>
+      </tr>
+      <tr>
+        <td>{{ myNum }}</td>
+        <td>percent</td>
+        <td>{{ myNum | percent }}</td>
+      </tr>
+      <tr>
+        <td>{{ myNum }}</td>
+        <td>percent:'2.2-2'</td>
+        <td>{{ myNum | percent: "2.2-2" }}</td>
+      </tr>
+      <tr>
+        <td>{{ salario }}</td>
+        <td>currency</td>
+        <td>{{ salario | currency }}</td>
+      </tr>
+      <tr>
+        <td>{{ salario }}</td>
+        <td>currency:'PEN'</td>
+        <td>{{ salario | currency: "PEN" }}</td>
+      </tr>
+      <tr>
+        <td>{{ salario }}</td>
+        <td>currency:'EUR':'code'</td>
+        <td>{{ salario | currency: "EUR":"code" }}</td>
+      </tr>
+      <tr>
+        <td>{{ salario }}</td>
+        <td>currency:'EUR':'symbol':'4.0-0'</td>
+        <td>{{ salario | currency: "EUR":"symbol":"4.0-0" }}</td>
+      </tr>
+      <tr>
+        <td>{{ novato }}</td>
+        <td>json</td>
+        <td>
+          <pre>{{ novato | json }} </pre>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ promiseValue }}</td>
+        <td>json</td>
+        <td>
+          <pre>{{ promiseValue | json }} </pre>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ promiseValue }}</td>
+        <td>async</td>
+        <td>
+          <pre>{{ promiseValue | async }} </pre>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ myDate }}</td>
+        <td>date</td>
+        <td>
+          <pre>{{ myDate | date }} </pre>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ myDate }}</td>
+        <td>date:'medium'</td>
+        <td>
+          <pre>{{ myDate | date: "medium" }} </pre>
+        </td>
+      </tr>
+      <tr>
+        <td>{{ myDate }}</td>
+        <td>date:'EEE, d of LLL of yyyy'</td>
+        <td>
+          <pre
+            >{{ myDate | date: "EEE, d of LLL of yyyy" }}
+        </pre
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>MiPrimerPipe</td>
+        <td>MiPrimerPipe</td>
+        <td>
+          <pre
+            >{{ "MiPrimerPipe" | MiPrimerPipe }}
+        </pre
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>YouTube video</td>
+        <td></td>
+        <td>
+          <iframe
+            width="560"
+            height="315"
+            src="
+        https://www.youtube.com/embed/TlQMt-fSWPY"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope;
+        picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </td>
+      </tr>
+      <tr>
+        <td>YouTube video</td>
+        <td></td>
+        <td>
+          <iframe
+            width="560"
+            height="315"
+            [src]="video | safeDOM: 'https://www.youtube.com/embed/'"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope;
+        picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </td>
+      </tr>
+      <tr>
+        <td>YouTube video</td>
+        <td>
+          <button (click)="video1()">video1</button>
+          <button (click)="video2()">video2</button>
+        </td>
+        <td>
+          <iframe
+            width="560"
+            height="315"
+            [src]="videoNew | safeDOM: 'https://www.youtube.com/embed/'"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope;
+        picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </td>
+      </tr>
+      <tr>
+        <td>Mi password:</td>
+        <td>
+          encrypt:{{ enable }}
+          <button class="btn btn-info" (click)="enable = !enable">
+            <p *ngIf="enable" class="mb-0">Mostrar Clave</p>
+            <p *ngIf="!enable" class="mb-0">Ocultar Clave</p>
+          </button>
+        </td>
+        <td>{{ password | encrypt: enable }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

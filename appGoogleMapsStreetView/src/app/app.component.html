@@ -1,0 +1,11 @@
+<div class="my-google-map">
+  <google-map [options]="mapOptions">
+    <map-marker
+      *ngFor="let marker of markers"
+      [position]="marker.position"
+    ></map-marker>
+  </google-map>
+  <button (click)="tinyAlert()">Notificacion Simple</button>
+  <button (click)="successNotification()">Notification Exitosa</button>
+  <button (click)="alertConfirmation()">Mostrar Confirmacion</button>
+</div>
