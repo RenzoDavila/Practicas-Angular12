@@ -8,10 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PruebaComponent } from './prueba/prueba.component';
 import { SongModule } from './song/song.module';
-import { SafePipe } from './song/song/safe.pipe';
 
 @NgModule({
-  declarations: [AppComponent, PruebaComponent, SafePipe],
+  declarations: [AppComponent, PruebaComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

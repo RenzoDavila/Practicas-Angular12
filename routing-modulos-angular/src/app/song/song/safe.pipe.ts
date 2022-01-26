@@ -1,16 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Song } from './song';
-import { SONGS } from './mock-songs';
-@Injectable({
-  providedIn: 'root',
+import { Pipe, PipeTransform } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+@Pipe({
+  name: 'safe',
 })
-export class SongService {
-  song: Song[];
-  constructor() {
-    this.song = [];
-  }
-  getSongs(year: number): Song[] {
-    this.song = SONGS[year - 1].items;
-    return this.song;
+export class SafePipe implements PipeTransform {
+  constructor(private sanitizer: DomSanitizer) {}
+  transform(url: any): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }
