@@ -1,0 +1,31 @@
+<google-map
+  width="750px"
+  height="450px"
+  [center]="center"
+  [zoom]="zoom"
+  [options]="options"
+  (mapClick)="click($event)"
+>
+  <map-marker
+    *ngFor="let marker of markers; let i = index"
+    [position]="marker.position"
+    [label]="marker.label"
+    [title]="marker.title"
+    [options]="marker.options"
+    (mapClick)="openInfo(marker, i)"
+  >
+    <map-info-window>{{ infoContent }}</map-info-window>
+  </map-marker>
+</google-map>
+
+<div *ngFor="let marker of markers">
+  <li>{{ marker | json }}</li>
+</div>
+
+<!-- Use custom zoom buttons -->
+<button (click)="zoomIn()">Zoom in</button>
+<button (click)="zoomOut()">Zoom out</button>
+<button (click)="addMarker()">Add Marker</button>
+<!-- <button (click)="tinyAlert()">Notificacion Simple</button>
+<button (click)="successNotification()">Notification Exitosa</button>
+<button (click)="alertConfirmation()">Mostrar Confirmacion</button> -->

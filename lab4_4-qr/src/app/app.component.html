@@ -1,0 +1,75 @@
+<h2>mis datos</h2>
+<qr-code [value]="dataToString"></qr-code>
+<br />
+<br />
+<br />
+<br />
+
+<h2>Dynamically Update QR Code Values</h2>
+<div>QR Code: {{ qrCodeVal }}</div>
+<div>Level: {{ level }}</div>
+<div>Width: {{ width }}</div>
+<br />
+<br />
+
+<div>
+  <qr-code [value]="qrCodeVal" [size]="width" [level]="level"></qr-code>
+</div>
+
+<h4>Change QR Code Info</h4>
+<label>
+  Update name string: <input [(ngModel)]="qrCodeVal" placeholder="name" />
+</label>
+<br />
+<br />
+
+<button (click)="updateQrInfo('John Doe')">Update to "John Doe"</button>
+<button (click)="updateQrInfo('Ryan Duff')">Update to "Ryan Duff"</button>
+<button (click)="updateQrInfo('Jerry Maguire')">
+  update to "Jerry Maguire"
+</button>
+
+<br />
+<br />
+<strong>Update Width</strong>:
+<button (click)="updateWidth(500)">500</button>
+<button (click)="updateWidth(400)">400</button>
+<button (click)="updateWidth(300)">300</button>
+<button (click)="updateWidth(200)">200</button>
+
+<br />
+<br />
+<strong>Update Level</strong>:
+<button (click)="updateLevel('L')">L</button>
+<button (click)="updateLevel('M')">M</button>
+<button (click)="updateLevel('Q')">Q</button>
+<button (click)="updateLevel('H')">H</button>
+
+<br />
+<br />
+<br />
+<br />
+
+<br />
+<br />
+<br />
+<br />
+
+<h2>prueba con vacunas</h2>
+<qr-code [value]="UsersToString" [size]="width" [level]="level"></qr-code>
+<br />
+
+<h4>Elija paciente</h4>
+<label>
+  Paciente: <input [(ngModel)]="textocambiado" placeholder="name" />
+</label>
+<br />
+<br />
+<tr *ngFor="let user of Users">
+  <button (click)="cambiar(user.id)">Update to "{{ user.name }}"</button>
+  <br />
+</tr>
+<br />
+<br />
+<br />
+<br />

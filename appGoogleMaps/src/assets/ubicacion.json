@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Plaza de armas",
+    "latitud": -16.3987992,
+    "longitud": -71.539085
+  },
+  {
+    "id": 2,
+    "name": "Mirador de yanahuara",
+    "latitud": -16.3874707,
+    "longitud": -71.5439161
+  },
+  {
+    "id": 3,
+    "name": "Molino de sabandia",
+    "latitud": -16.4567399,
+    "longitud": -71.5017685
+  },
+  {
+    "id": 4,
+    "name": "Volcan misti",
+    "latitud": -16.2988125,
+    "longitud": -71.4144314
+  }
+]
