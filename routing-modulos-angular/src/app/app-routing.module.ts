@@ -17,6 +17,11 @@ const routes: Routes = [
     path: 'song',
     loadChildren: () => import(`./song/song.module`).then((m) => m.SongModule),
   },
+  {
+    path: 'forms',
+    loadChildren: () =>
+      import('./forms/forms.module').then((m) => m.FormsModule),
+  },
   { path: '', component: PruebaComponent },
 ];
 
