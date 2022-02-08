@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  application:
-  {
+  application: {
     name: 'angular-starter',
     angular: 'Angular 13.1.1',
     bootstrap: 'Bootstrap 5.1.3',
@@ -21,12 +20,12 @@ export const environment = {
     /* SELECT ONE OF THOSE CONFIGURATIONS */
 
     /* LOCAL JSON (NO CRUD) */
-    api: false,
-    url: './assets/params/json/crud/',
+    // api: false,
+    // url: './assets/params/json/crud/',
 
     /* LOCAL REST API CRUD WITH POSTGRESQL */
-    /* api: true,
-    url: 'http://localhost:5004/', */
+    api: true,
+    url: 'http://localhost:5004/',
   },
 };
 
