@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angfirebase2022-rd": {
+      "hosting": {
+        "angular-firebase": [
+          "angfirebase2022-rd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angfirebase2022-rd"
+  }
+}
